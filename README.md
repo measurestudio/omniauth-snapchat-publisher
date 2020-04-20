@@ -1,0 +1,1 @@
+# omniauth-snapchat-publisher
