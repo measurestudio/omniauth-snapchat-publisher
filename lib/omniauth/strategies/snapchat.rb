@@ -1,5 +1,4 @@
 require 'omniauth-oauth2'
-require 'multi_json'
 
 module OmniAuth
   module Strategies
@@ -19,6 +18,7 @@ module OmniAuth
         {
           display_name: raw_info.dig('data', 'me', 'displayName'),
           external_id: raw_info.dig('data', 'me', 'externalId'),
+          avatar: raw_info.dig('data', 'me', 'bitmoji', 'avatar'),
         }
       end
 
@@ -30,7 +30,7 @@ module OmniAuth
 
       def raw_info
         raw_info_url = "https://kit.snapchat.com/v1/me"
-        params = { query: '{ me { externalId displayName } }' }
+        params = { query: '{ me { externalId displayName bitmoji { avatar } } }' }
         @raw_info ||= access_token.get(raw_info_url, params: params).parsed
       end
 

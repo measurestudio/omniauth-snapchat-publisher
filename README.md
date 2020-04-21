@@ -20,6 +20,36 @@ Here's an example for adding the middleware to a Rails app in `config/initialize
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :snapchat, ENV["SNAPCHAT_CLIENT_ID"], ENV["SNAPCHAT_CLIENT_SECRET"], scope: ENV["SNAPCHAT_SCOPES"]
+  provider :snapchat, ENV["SNAPCHAT_CLIENT_ID"], ENV["SNAPCHAT_CLIENT_SECRET"], scope: ENV["SNAPCHAT_SCOPES"], setup: true
 end
+```
+
+## Auth Hash
+
+Here's an example Auth Hash available in `request.env['omniauth.auth']`:
+
+```ruby
+{
+  provider: 'snapchat',
+  uid: 'CAvJQ2/adr9EIS1fUOubMJIjjPCxarc7CK4',
+  info: {
+    display_name: 'SnapName',
+    external_id: 'CAvJQ2/adr9EIS1fUOubMJIjjPCxarc7CK4',
+    avatar: 'https://sdk.bitmoji.com/render/panel/20745505asjdkasjh'
+  },
+  credentials: {
+    refresh_token: 'ABCDEF...',
+    expires_at: 1321747205,
+    expires: true
+  },
+  extra: {
+    raw_info: {
+       display_name: 'SnapName',
+        external_id: 'CAvJQ2/adr9EIS1fUOubMJIjjPCxarc7CK4',
+        avatar: 'https://sdk.bitmoji.com/render/panel/20745505asjdkasjh'
+      }
+    }
+  }
+}
+
 ```
