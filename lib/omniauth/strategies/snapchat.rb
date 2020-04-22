@@ -29,7 +29,7 @@ module OmniAuth
       end
 
       def raw_info
-        raw_info_url = "https://kit.snapchat.com/v1/me"
+        raw_info_url = 'https://kit.snapchat.com/v1/me'
         params = { query: '{ me { externalId displayName bitmoji { avatar } } }' }
         @raw_info ||= access_token.get(raw_info_url, params: params).parsed
       end
