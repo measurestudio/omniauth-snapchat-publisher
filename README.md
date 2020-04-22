@@ -38,7 +38,8 @@ Here's an example Auth Hash available in `request.env['omniauth.auth']`:
     avatar: 'https://sdk.bitmoji.com/render/panel/20745505asjdkasjh'
   },
   credentials: {
-    refresh_token: 'ABCDEF...',
+    token: 'ABCDEF...',
+    refresh_token: 'XYZAKJS...',
     expires_at: 1321747205,
     expires: true
   },
@@ -47,9 +48,9 @@ Here's an example Auth Hash available in `request.env['omniauth.auth']`:
        display_name: 'SnapName',
         external_id: 'CAvJQ2/adr9EIS1fUOubMJIjjPCxarc7CK4',
         avatar: 'https://sdk.bitmoji.com/render/panel/20745505asjdkasjh'
-      }
     }
-  }
+  },
+  errors: []
 }
 
 ```
