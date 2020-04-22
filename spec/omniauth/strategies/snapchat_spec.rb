@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rspec'
 require 'omniauth-snapchat-publisher'
 
 describe OmniAuth::Strategies::Snapchat do
