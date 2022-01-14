@@ -7,7 +7,7 @@ A OmniAuth strategy for Snapchat Publisher
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'omniauth-snapchat-publisher', github: 'paladinsoftware/omniauth-snapchat-publisher'
+gem 'omniauth-snapchat-publisher', github: 'measurestudio/omniauth-snapchat-publisher'
 ```
 
 And then execute:
